@@ -1,4 +1,4 @@
-package main
+package envg
 
 import (
 	"fmt"
@@ -26,7 +26,7 @@ func LoadConfig(cfg any) error {
 			if err != nil {
 				return err
 			}
-			if err := setFieldFromString(field, envValue); err != nil {
+			if err = setFieldFromString(field, envValue); err != nil {
 				return fmt.Errorf("error setting field %s: %v", fieldType.Name, err)
 			}
 		}
